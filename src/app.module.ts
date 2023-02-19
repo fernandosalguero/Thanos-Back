@@ -15,6 +15,7 @@ import { AppService } from './app.service';
       database: 'thanos',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      autoLoadEntities: true
     }),
     AltaAgenteModule,
   ],
