@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AltaAgenteModule } from './altaAgentes/alta-agente.module';
+import { AltaAgenteModule } from './altaUsuario/alta-usuario.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
