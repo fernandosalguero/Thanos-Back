@@ -12,6 +12,7 @@ export class AltaUsuariosController {
     @Post()
     createAlta(@Body() newAlta: altaUsuarioDTO) {
         return this.altaService.crearAlta(newAlta)
+
     }
 
 }
