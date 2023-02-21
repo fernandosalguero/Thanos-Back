@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { altaDTO } from '../dto/alta.dto';
+import { altaUsuarioDTO } from '../dto/altausuario.dto';
 import { AltaUsuarioService } from '../services/alta-usuario.service';
 
 @Controller('alta-usuarios')
@@ -10,7 +10,7 @@ export class AltaUsuariosController {
     ) { }
 
     @Post()
-    createAlta(@Body() newAlta: altaDTO) {
+    createAlta(@Body() newAlta: altaUsuarioDTO) {
         return this.altaService.crearAlta(newAlta)
     }
 

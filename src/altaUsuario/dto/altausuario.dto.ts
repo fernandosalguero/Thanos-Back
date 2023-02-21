@@ -1,4 +1,4 @@
-export class altaDTO {
+export class altaUsuarioDTO {
 
     dni: number
 
