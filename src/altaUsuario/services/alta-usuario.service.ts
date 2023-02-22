@@ -15,5 +15,9 @@ export class AltaUsuarioService {
         return this.altaUsuarioRepo.save(newAlta)
     }
 
+    getListarUsuarios(){
+        return this.altaUsuarioRepo.find()
+    }
+
 
 }

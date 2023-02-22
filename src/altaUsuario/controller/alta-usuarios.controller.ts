@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { altaUsuarioDTO } from '../dto/altausuario.dto';
 import { AltaUsuarioService } from '../services/alta-usuario.service';
 
@@ -8,9 +8,14 @@ export class AltaUsuariosController {
     constructor(
         private altaService: AltaUsuarioService
     ) { }
+    
+    @Get()
+    getaltausuario(): Promise <altaUsuarioDTO[]>{
+        return this.altaService.getListarUsuarios();
+    }
 
     @Post()
-    createAlta(@Body() newAlta: altaUsuarioDTO) {
+    createAlta(@Body() newAlta: altaUsuarioDTO): Promise<altaUsuarioDTO> {
         return this.altaService.crearAlta(newAlta)
 
     }
