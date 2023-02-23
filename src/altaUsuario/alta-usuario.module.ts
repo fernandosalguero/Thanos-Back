@@ -9,4 +9,4 @@ import { altaUsuarioEntity } from './entitys/altaUsuario.entity';
   providers: [AltaUsuarioService],
   controllers: [AltaUsuariosController]
 })
-export class AltaAgenteModule { }
+export class AltaUsuarioModule { }

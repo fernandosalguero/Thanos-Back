@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AltaAgenteModule } from './altaUsuario/alta-usuario.module';
+import { AltaUsuarioModule } from './altaUsuario/alta-usuario.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -17,7 +17,7 @@ import { AppService } from './app.service';
       synchronize: true,
       autoLoadEntities: true
     }),
-    AltaAgenteModule,
+    AltaUsuarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
