@@ -19,5 +19,14 @@ export class AltaUsuarioService {
         return this.altaUsuarioRepo.find()
     }
 
+    getbuscarusuario(dni:number){
+        return this.altaUsuarioRepo.findOne({
+            where: {
+                dni
+            }
+        })
+
+    }
+
 
 }
