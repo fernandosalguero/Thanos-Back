@@ -24,5 +24,5 @@ export class altaUsuarioEntity {
 
     @Column()
     jefe: string
-
+    
 }

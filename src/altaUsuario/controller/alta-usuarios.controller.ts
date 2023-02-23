@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Get } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { altaUsuarioDTO } from '../dto/altausuario.dto';
 import { AltaUsuarioService } from '../services/alta-usuario.service';
 
@@ -8,10 +8,15 @@ export class AltaUsuariosController {
     constructor(
         private altaService: AltaUsuarioService
     ) { }
-    
+
     @Get()
-    getaltausuario(): Promise <altaUsuarioDTO[]>{
+    getlistarusuario(): Promise <altaUsuarioDTO[]>{
         return this.altaService.getListarUsuarios();
+    }
+
+    @Get(':id') /*mostra*/
+    getbuscarusuraio(@Param('id', ParseIntPipe) id:number): Promise <altaUsuarioDTO>{
+        return this.altaService.getbuscarusuario(id);
     }
 
     @Post()
