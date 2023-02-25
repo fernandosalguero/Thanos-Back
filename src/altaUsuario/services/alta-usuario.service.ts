@@ -19,11 +19,11 @@ export class AltaUsuarioService {
             }
         })
         if(userexistente){
-            return new HttpException('DNI existente, intenta con otro dni', HttpStatus.CONFLICT)
+            return new HttpException('DNI existente, intenta con otro dni', HttpStatus.CONFLICT);
         }
 
-        const newAlta = this.altaUsuarioRepo.create(alta)
-        return this.altaUsuarioRepo.save(newAlta)
+        const newAlta = this.altaUsuarioRepo.create(alta);
+        return this.altaUsuarioRepo.save(newAlta);
     }
 
     getListarUsuarios(){
@@ -37,7 +37,7 @@ export class AltaUsuarioService {
             },
         });
         if (!usuarioexiste){
-            return new HttpException('DNI no encontrado o no existe', HttpStatus.NOT_FOUND)
+            return new HttpException('DNI no encontrado o no existe', HttpStatus.NOT_FOUND);
         }
         return usuarioexiste;
     }
@@ -46,15 +46,24 @@ export class AltaUsuarioService {
         const usuarioEliminado= await this.altaUsuarioRepo.delete({id});
 
         if(usuarioEliminado.affected === 0 ){
-            return new HttpException('El usuario no existe y no puede ser eliminado', HttpStatus.NOT_FOUND)
+            return new HttpException('El usuario no existe y no puede ser eliminado', HttpStatus.NOT_FOUND);
         }
         return usuarioEliminado;
     }
 
 
-    updateUsuario(id: number, user:actualizar_usuarioDto){
-        return this.altaUsuarioRepo.update({id}, user)
-
+    async updateUsuario(id: number, user:actualizar_usuarioDto){
+        const user_actualizar= await this.altaUsuarioRepo.findOne({
+        where:{
+            id,
+        }
+        })
+        
+        if(!user_actualizar){
+            return new HttpException('El usuario no existe y no puede ser actualizado', HttpStatus.NOT_FOUND);
+        }
+        const usuario_actualizado=Object.assign(user_actualizar, user);
+        return this.altaUsuarioRepo.save(usuario_actualizado);
     }
 
 
