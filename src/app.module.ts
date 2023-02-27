@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AltaUsuarioModule } from './altaUsuario/alta-usuario.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { InfopersonalModule } from './infopersonal/infopersonal.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AppService } from './app.service';
       autoLoadEntities: true
     }),
     AltaUsuarioModule,
+    InfopersonalModule,
   ],
   controllers: [AppController],
   providers: [AppService],

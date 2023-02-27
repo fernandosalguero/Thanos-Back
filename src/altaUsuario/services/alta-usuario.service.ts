@@ -65,6 +65,7 @@ export class AltaUsuarioService {
         const usuario_actualizado=Object.assign(user_actualizar, user);
         return this.altaUsuarioRepo.save(usuario_actualizado);
     }
+    
 
 
 }
