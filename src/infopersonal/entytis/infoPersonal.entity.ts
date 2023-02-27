@@ -7,10 +7,10 @@ export class infoPersoalEntity {
     id: number
 
     @Column()
-    Nombre: string
+    nombre: string
 
     @Column()
-    Apellido: string
+    apellido: string
 
     @Column({ type: 'datetime'})
     fechadeNacimiento: Date 
