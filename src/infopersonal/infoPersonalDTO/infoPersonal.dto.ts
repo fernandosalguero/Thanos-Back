@@ -1,4 +1,4 @@
-export class altaUsuarioDTO {
+export class infoPersonalDTO {
 
     nombre: string
 
