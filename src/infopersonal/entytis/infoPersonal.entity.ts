@@ -13,6 +13,5 @@ export class infoPersoalEntity {
     Apellido: string
 
     @Column({ type: 'datetime'})
-    fechadeNacimiento: Date
-    
+    fechadeNacimiento: Date 
 }
