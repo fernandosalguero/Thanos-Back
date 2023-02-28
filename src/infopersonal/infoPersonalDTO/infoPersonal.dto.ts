@@ -1,9 +1,9 @@
 export class infoPersonalDTO {
 
-    nombre: string
+    nombre?: string
 
-    apellido: string
+    apellido?: string
 
-    fechadeNacimeinto: Date
+    fechadeNacimeinto?: Date
 
 }

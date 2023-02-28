@@ -1,5 +1,6 @@
 // las entidades crean las tablas en mysql
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { infoPersonalEntity } from "src/infopersonal/entytis/infoPersonal.entity";
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
 
 @Entity({ name: 'altausuario' })
 export class altaUsuarioEntity {
@@ -25,4 +26,7 @@ export class altaUsuarioEntity {
     @Column()
     jefe: string
     
+    @OneToOne(()=> infoPersonalEntity) 
+    @JoinColumn()
+    Info_personal=infoPersonalEntity;
 }

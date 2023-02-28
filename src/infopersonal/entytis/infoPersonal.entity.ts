@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+
 @Entity({ name: 'Infopersonal' })
 export class infoPersonalEntity {
 
@@ -12,6 +13,7 @@ export class infoPersonalEntity {
     @Column()
     apellido: string
 
-    @Column({ type: 'datetime'})
+    @Column()
     fechadeNacimiento: Date 
+
 }
