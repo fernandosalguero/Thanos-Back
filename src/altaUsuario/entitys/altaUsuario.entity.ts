@@ -28,5 +28,5 @@ export class altaUsuarioEntity {
     
     @OneToOne(()=> infoPersonalEntity) 
     @JoinColumn()
-    Info_personal=infoPersonalEntity;
+    Info_personal:infoPersonalEntity;
 }

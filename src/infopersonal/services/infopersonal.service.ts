@@ -28,7 +28,8 @@ async crearinfoPersonal (id: number, altainfopersonal: infoPersonalDTO) {
     }
     const nuevoinfopersonal= this.infoPersonalRepo.create(altainfopersonal)
     const guardarNuevoInfoPersonal= await this.infoPersonalRepo.save(nuevoinfopersonal)
-    
+    userexistente.Info_personal = guardarNuevoInfoPersonal
+    return this.altaUsuarioRepo.save(userexistente)
 }
 
 
