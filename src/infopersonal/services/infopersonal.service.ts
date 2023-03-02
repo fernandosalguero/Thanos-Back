@@ -14,7 +14,7 @@ constructor(
     ){} 
 
 
-async crearinfoPersonal (id: number, altainfopersonal: infoPersonalDTO) {
+async crearinfoPersonal (id: number, infoPersonal: infoPersonalDTO) {
 
     const userexistente= await this.altaUsuarioRepo.findOne ({
         where:{
@@ -26,11 +26,41 @@ async crearinfoPersonal (id: number, altainfopersonal: infoPersonalDTO) {
         return new HttpException('Usuario no encontrado', HttpStatus.NO_CONTENT);
 
     }
-    const nuevoinfopersonal= this.infoPersonalRepo.create(altainfopersonal)
+    const nuevoinfopersonal= this.infoPersonalRepo.create(infoPersonal)
     const guardarNuevoInfoPersonal= await this.infoPersonalRepo.save(nuevoinfopersonal)
-    userexistente.Info_personal = guardarNuevoInfoPersonal
+    userexistente.infoPersonal= guardarNuevoInfoPersonal
     return this.altaUsuarioRepo.save(userexistente)
 }
+
+
+
+// async editarinfoPersonal (id: number, editarInfopersonal: infoPersonalDTO) {
+
+//     const userexistente= await this.altaUsuarioRepo.findOne ({
+//         where:{
+//             id,
+//         },
+//     });
+
+//     if (!userexistente){
+//         return new HttpException('Usuario no encontrado', HttpStatus.NO_CONTENT);
+
+//     }
+    
+//     const actualizarinfopersonal= await this.infoPersonalRepo.findOne({
+//         where:{
+//             id,
+//         }
+//         })
+        
+//         if(!actualizarinfopersonal){
+//             return new HttpException('El usuario no existe y no puede ser actualizado', HttpStatus.NOT_FOUND);
+//         }
+//         const usuario_infopersonal=Object.assign(actualizarinfopersonal, editarInfopersonal);
+//         return this.infoPersonalRepo.save(actualizarinfopersonal);
+
+// }
+
 
 
 }

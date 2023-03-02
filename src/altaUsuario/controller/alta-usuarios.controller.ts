@@ -1,4 +1,5 @@
 import { Body, Controller, Post, Get, Param, ParseIntPipe, Delete, Patch,} from '@nestjs/common';
+import { infoPersonalDTO } from 'src/infopersonal/infoPersonalDTO/infoPersonal.dto';
 import { actualizar_usuarioDto } from '../dto/actualizarusuario.dto';
 import { altaUsuarioDTO } from '../dto/altausuario.dto';
 import { AltaUsuarioService } from '../services/alta-usuario.service';
@@ -35,11 +36,5 @@ export class AltaUsuariosController {
 @Patch(':id')
 update_Usuarios(@Param('id', ParseIntPipe) id: number, @Body() user:actualizar_usuarioDto){
 return this.altaService.updateUsuario(id, user)
-
 }
-
-
-
-
-
 }

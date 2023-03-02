@@ -1,0 +1,10 @@
+describir una tabla 
+mysql> show columns from TABLE_NAME;
+mysql> desc TABLE_NAME;
+mysql> show create table TABLE_NAME;
+
+selecionar una tabla y ver su contenido
+SELECT * FROM nombretabla 
+
+para elegir una base de datos 
+user * from nombre de la base de datos 

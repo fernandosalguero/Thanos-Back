@@ -9,8 +9,10 @@ import { altaUsuarioEntity } from '../entitys/altaUsuario.entity';
 @Injectable()
 export class AltaUsuarioService {
 
-    constructor(@InjectRepository(altaUsuarioEntity) private altaUsuarioRepo: Repository<altaUsuarioEntity>) { }
-
+    constructor(
+        @InjectRepository(altaUsuarioEntity) private altaUsuarioRepo: Repository<altaUsuarioEntity>
+        ){} 
+    
     async crearAlta(alta: altaUsuarioDTO) {
 
         const userexistente= await this.altaUsuarioRepo.findOne({
