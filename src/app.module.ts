@@ -4,6 +4,7 @@ import { AltaUsuarioModule } from './altaUsuario/alta-usuario.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { InfopersonalModule } from './infopersonal/infopersonal.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,8 +19,7 @@ import { InfopersonalModule } from './infopersonal/infopersonal.module';
       synchronize: true,
       autoLoadEntities: true
     }),
-    AltaUsuarioModule,
-    InfopersonalModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
