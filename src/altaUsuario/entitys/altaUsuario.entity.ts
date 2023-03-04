@@ -27,6 +27,6 @@ export class altaUsuarioEntity {
     jefe: string
     
     @OneToOne(()=> infoPersonalEntity) 
-    @JoinColumn()
+    @JoinColumn({name : 'info_personal'})
     infoPersonal:infoPersonalEntity;
 }

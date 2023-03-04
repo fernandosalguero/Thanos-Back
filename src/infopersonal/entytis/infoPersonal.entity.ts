@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
 
+import { altaUsuarioEntity } from 'src/altaUsuario/entitys/altaUsuario.entity'; 
 
 @Entity({ name: 'infopersonal' })
 export class infoPersonalEntity {
@@ -9,15 +10,17 @@ export class infoPersonalEntity {
     id: number
 
     @Column()
-    nombre: string
+    nombre: string;
 
     @Column()
-    apellido: string
+    apellido: string;
 
     @Column()
-    fechadeNacimiento: Date 
+    fechadeNacimiento: Date;
 
     @Column()
-    avatar?: string
+    avatar?: string;
 
+    @OneToOne(()=>altaUsuarioEntity, (altaUsuarioEntity) => altaUsuarioEntity.infoPersonal )
+    altausuario:altaUsuarioEntity;
 }

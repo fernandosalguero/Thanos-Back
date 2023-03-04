@@ -3,7 +3,6 @@ import { AltaUsuarioService } from 'src/altaUsuario/services/alta-usuario.servic
 import { actualizarinfoPersonalDTO } from '../infoPersonalDTO/actualizarinfoper.dto';
 import { infoPersonalDTO } from '../infoPersonalDTO/infoPersonal.dto';
 import { InfopersonalService } from '../services/infopersonal.service';
-
 @Controller('info-personal')
 export class InfopersonalController {
 
